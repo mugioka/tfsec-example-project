@@ -16,7 +16,6 @@ jobs:
       - name: tfsec
         uses: tfsec/tfsec-sarif-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           sarif_file:  tfsec.sarif
 
       - name: Upload SARIF file
