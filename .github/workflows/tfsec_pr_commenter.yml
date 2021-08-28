@@ -9,20 +9,7 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@master
-        with:
-          fetch-depth: 2
-      - name: Get changed directories
-        run: | 
-          echo "::set-output name=directories::$(git diff -r ${{ github.event.pull_request.base.sha }} --name-only --diff-filter=ACMRT | grep .tf$ | while read f; do dirname ${f}; done | uniq | xargs)"
-        id: get-changed-directories
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.5
-      - name: Init terraform modules
-        run: for dir in ${{ steps.get-changed-directories.outputs.directories}}; do terraform -chdir=${dir} init; done
       - name: tfsec
-        uses: mugioka/tfsec-pr-commenter-action@main
+        uses: MatchingAgent/tfsec-pr-commenter-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          changed_directories: ${{ steps.get-changed-directories.outputs.directories }}
