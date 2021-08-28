@@ -1,3 +1,4 @@
+
 data "aws_s3_bucket" "acme-s3-access-logging" {
   bucket = "test"
 }
