@@ -93,4 +93,3 @@ resource "aws_s3_bucket" "not-another-public-one-please" {
     }
   }
 }
-
