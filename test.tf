@@ -1,5 +1,4 @@
 data "aws_s3_bucket" "acme-s3-access-logging" {
-
   bucket = var.acme_s3_logging_bucket
 }
 
