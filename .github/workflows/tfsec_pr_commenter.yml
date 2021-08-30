@@ -11,6 +11,6 @@ jobs:
         uses: actions/checkout@master
 
       - name: tfsec
-        uses: mugioka/tfsec-pr-commenter-action@main
+        uses: MatchingAgent/tfsec-pr-commenter-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
