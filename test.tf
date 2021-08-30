@@ -30,7 +30,6 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
 
 resource "aws_s3_bucket" "bucket-with-encryption" {
   bucket = "my-failing-bucket-no-logging"
-
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
