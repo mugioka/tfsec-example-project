@@ -15,7 +15,6 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
     target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
     target_prefix = "my-passing-bucket/logs/"
   }
-
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
