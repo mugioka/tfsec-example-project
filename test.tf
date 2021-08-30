@@ -7,6 +7,7 @@ module "acme_finance_bucket" {
   bucket_name = "finance-reports"
   cost_centre = "CC001"
   s3_logging_bucket = var.acme_s3_logging_bucket
+
 }
 resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
   bucket = "my-passing-bucket"
