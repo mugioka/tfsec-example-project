@@ -10,7 +10,6 @@ module "acme_finance_bucket" {
 }
 resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
   bucket = "my-passing-bucket"
-
   logging {
     target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
     target_prefix = "my-passing-bucket/logs/"
