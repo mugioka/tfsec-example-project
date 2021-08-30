@@ -24,4 +24,3 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
     }
   }
 }
-
